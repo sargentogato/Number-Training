@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "consola";
+  src: url("./assets/font/consola.ttf") format(truetype);
+}
+
+:root {
+  --background: #f53b57;
+  --btn-color: #4bcffa;
+}
+
+body {
+  background-color: var(--background);
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h1,
+.number {
+  text-align: center;
+  font-family: consolas;
+}
+
+.number {
+  font-size:3rem;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  .btn {
+    padding: 0.5rem 1rem;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    background-color: var(--btn-color);
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+.box__inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  .intro,
+  .answer {
+    border: 2px solid black;
+    height: 5rem;
+  }
+}
+
+.boxText{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  p{
+    font-size: 1rem;
+  }
+}
+
+input {
+  text-align: center;
+  font-size: 50px;
+  width: 20%;
+}
+
+.colorSuccess{
+  background-color: hsl(120, 60, 80);
+}
+
+.colorAlert{
+  background-color: rgb(255, 0, 0);
+  color: white;
+}
+
