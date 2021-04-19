@@ -2,13 +2,8 @@
   font-family: "consola";
   src: url("./assets/font/consola.ttf") format(truetype);
 }
-:root {
-  --background: #f53b57;
-  --btn-color: #4bcffa;
-}
-
 body {
-  background-color: var(--background);
+  background-color: #0fb9b1;
   height: 100vh;
 }
 
@@ -39,7 +34,7 @@ h1,
   outline: none;
   border-radius: 10px;
   color: white;
-  background-color: var(--btn-color);
+  background-color: #4bcffa;
   font-size: 1rem;
   font-weight: bold;
 }
@@ -63,6 +58,9 @@ h1,
   gap: 2rem;
 }
 .boxText p {
+  flex-basis: 30%;
+  text-align: center;
+  color: white;
   font-size: 1rem;
 }
 
