@@ -3,9 +3,18 @@ const numberBox = document.getElementById("number");
 const form = document.forms[0];
 let numberShowed = null;
 const btn = document.querySelector("button");
+let counter = 0
 
 document.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") checkIntro();
+  if (e.key === "Enter"){
+    if(counter === 1){
+      btn.click()
+      counter = 0
+    }else{
+      counter = 1
+      checkIntro();
+    }
+  } 
 });
 
 btn.addEventListener("click", (e) => {
@@ -47,5 +56,3 @@ function removeColor(){
     }
   }
 }
-
-export {numberShowed}
