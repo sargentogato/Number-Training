@@ -1,4 +1,5 @@
 @import "./config/variables";
+@import "./config/modal";
 
 @font-face {
   font-family: "consola";
@@ -6,12 +7,45 @@
 }
 
 body {
-  background-color:$bgMain;
   height: 100vh;
+  background-color: $bgMain;
 }
 
 h1 {
   font-size: 3rem;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 0.5rem;
+
+  @media (min-width: 720px) {
+    gap: 2rem;
+  }
+}
+
+.title,
+.instrucciones,
+.number,
+.box__inputs,
+.boxText,
+.btnBox {
+  flex-basis: 100%;
+}
+
+.instrucciones {
+  text-align: center;
+
+  @media (min-width: 720px) {
+    position: absolute;
+    font-size: 2rem;
+    left: 1rem;
+    top: 1rem;
+  }
 }
 
 h1,
@@ -21,33 +55,26 @@ h1,
 }
 
 .number {
-  font-size:3rem;
-}
-
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-
-  .btn {
-    padding: 0.5rem 1rem;
-    outline: none;
-    border-radius: 10px;
-    color: white;
-    background-color:$btnColor;
-    font-size: 1rem;
-    font-weight: bold;
-  }
+  font-size: 3rem;
 }
 
 .box__inputs {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
+  padding: 0 2rem;
+
+  input {
+    text-align: center;
+    font-size: 50px;
+    width: 100%;
+
+    @media (min-width: 720px) {
+      width: 20%;
+    }
+  }
 
   .intro,
   .answer {
@@ -56,32 +83,53 @@ h1,
   }
 }
 
-.boxText{
-  width: 100%;
+.boxText {
   display: flex;
   justify-content: center;
-  gap: 2rem;
 
-  p{
-    flex-basis: 30%;
+  p {
+    flex-basis: 100%;
+    padding: 0 2rem;
     text-align: center;
     color: white;
     font-size: 1rem;
   }
+
+  @media (min-width: 720px) {
+    p {
+      flex-basis: 50%;
+    }
+  }
 }
 
-input {
-  text-align: center;
-  font-size: 50px;
-  width: 20%;
+.btnBox {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+
+  .btn,
+  .btnEnter {
+    padding: 0.5rem 1rem;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    background-color: $btnColor;
+    font-size: 1rem;
+    font-weight: bold;
+
+    @media (min-width: 720px) {
+      &.btnEnter {
+        display: none;
+      }
+    }
+  }
 }
 
-.colorSuccess{
-  background-color:$successColor;
+.colorSuccess {
+  background-color: $successColor;
 }
 
-.colorAlert{
-  background-color:$alertColor ;
+.colorAlert {
+  background-color: $alertColor;
   color: white;
 }
-
