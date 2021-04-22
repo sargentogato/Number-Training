@@ -1,6 +1,5 @@
 import { numbers } from "./numbers.js";
 const numberBox = document.getElementById("number");
-const modalBtnNumber;
 const form = document.forms[0];
 let numberShowed = null;
 const btn = document.querySelector("button");
