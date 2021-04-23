@@ -1,14 +1,17 @@
 import { numbers } from "./numbers.js";
+
 const numberBox = document.getElementById("number");
 const form = document.forms[0];
-let numberShowed = null;
-const btn = document.querySelector("button");
+const btn = document.querySelectorAll("button");
+const modalText = document.getElementById("modalText");
+const fragment = document.createDocumentFragment();
 let counter = 0;
+let numberShowed = null;
 
 document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     if (counter === 1) {
-      btn.click();
+      generateNumber();
       counter = 0;
     } else {
       counter = 1;
@@ -17,7 +20,18 @@ document.addEventListener("keypress", (e) => {
   }
 });
 
-btn.addEventListener("click", (e) => {
+for (const node of btn) {
+  node.addEventListener("click", (e) => {
+    const eventTriggered = e.target.id;
+    if (eventTriggered === "btn") {
+      generateNumber();
+    } else if (eventTriggered === "btnModalNumbers") {
+      ModalNumbers();
+    }
+  });
+}
+
+function generateNumber() {
   const numberToshow = Math.floor(1 + Math.random() * 99);
   numberBox.textContent = numberToshow;
   numberShowed = numberToshow;
@@ -26,7 +40,7 @@ btn.addEventListener("click", (e) => {
   }
 
   form.reset();
-});
+}
 
 function checkIntro() {
   const answerData = form[0].value;
@@ -42,7 +56,6 @@ function checkIntro() {
 
 function addColor(color) {
   for (const input of form) {
-    console.log(input);
     input.classList.add(color);
   }
 }
