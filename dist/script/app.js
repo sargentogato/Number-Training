@@ -26,7 +26,7 @@ for (const node of btn) {
     if (eventTriggered === "btn") {
       generateNumber();
     } else if (eventTriggered === "btnModalNumbers") {
-      ModalNumbers();
+      alert("Proceso en Construcción");
     }
   });
 }
