@@ -17,7 +17,7 @@ document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     const inputAnswer = form[0].value;
     if (!inputAnswer && numberBox.innerText) {
-      alert("Escriba un número");
+      alert("Escriba un número en palabras");
       return;
     }
 
