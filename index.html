@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/reset.css" />
+    <link rel="stylesheet" href="dist/css/styel.css" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="dist/css/reset.css">
-  <link rel="stylesheet" href="dist/css/styel.css">
-  <title>Document</title>
-</head>
-
-<body>
-  <div class="container">
-    <h1 class="title">Numbers training</h1>
-    <a class="instrucciones" href="#openModal">Instrucciones</a>
-    <div class="number" id="number"></div>
-    <form class="box__inputs">
-      <input type="text" class="intro">
-      <input type="text" class="answer">
-    </form>
-    <div class="boxText">
-      <p>Para generar el primero número utilice el boton. Escriba en la casilla de la izquierda, la palabra
-        correspondiente al número que se muestra en pantalla. Una vez haya escrito la palabra, presione enter para saber
-        si está
-        correcta. Solo tendrá una oportunidad. Para generar un nuevo número puede presionar enter o el boton, generar
-        number.</p>
-    </div>
-    <div class="btnBox">
-      <button id="btn" class="btn">Generate number</button>
-      <button id="enter" class="btnEnter">Enter</button>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div id="openModal" class="modalBackground">
-    <div class="modalBox">
-      <div class="modalTitleClose">
-        <h2 class="modalTitle">Instrucciones</h2>
-        <a href="#close" title="close" class="close">X</a>
-      </div>
-
-      <div class="modalBoxText">
-        <p id="modalText" class="modalText">
-          El método para memorizar número se basa en el método de la cadena, que consiste en crear asociaciones entre
-          palabras. Si no conoces el método, deberás aprenderlo primero para luego poder entrenar el método con los
-          números. Si ya sabes cómo funciona el método de la cadena, presiona el boton que econtraras debajo para
-          generar los números con su correspondiente palabra.
+  <body>
+    <div class="container">
+      <h1 class="title">Numbers training</h1>
+      <a class="instructions" href="#openModal">Instrucciones</a>
+      <div class="number" id="number"></div>
+      <form class="box__inputs">
+        <input id="inputAnswer" type="text" class="intro" readonly />
+        <input type="text" class="answer" readonly />
+      </form>
+      <div class="boxText">
+        <p>
+          Para generar el primero número utilice el boton. Escriba en la casilla
+          de la izquierda, la palabra correspondiente al número que se muestra
+          en pantalla. Una vez haya escrito la palabra, presione enter para
+          saber si está correcta. Solo tendrá una oportunidad. Para generar un
+          nuevo número puede presionar enter o el boton, generar number.
         </p>
       </div>
 
-      <!-- Es muy importanet que cada elemento de cierre, tenga # así el target funcionará -->
-      <div class="modalBoxButtons">
-        <a href="#" class="linkButton"><button class="btn" type="button">Close</button></a>
-        <button id="btnModalNumbers" class="btnModalNumbers">Generar lista de números</button>
+      <button id="btn" class="btn">Generate number</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="openModal" class="modalBackground">
+      <div class="modalBox">
+        <div class="modalTitleClose">
+          <h2 class="modalTitle">Instrucciones</h2>
+          <a href="#close" title="close" class="close">X</a>
+        </div>
+
+        <div class="modalBoxText">
+          <p id="modalText" class="modalText">
+            El método para memorizar número se basa en el método de la cadena,
+            que consiste en crear asociaciones entre palabras. Si no conoces el
+            método, deberás aprenderlo primero para luego poder entrenar el
+            método con los números. Si ya sabes cómo funciona el método de la
+            cadena, presiona el boton que econtraras debajo para generar los
+            números con su correspondiente palabra.
+          </p>
+        </div>
+
+        <!-- Es muy importanet que cada elemento de cierre, tenga # así el target funcionará -->
+        <div class="modalBoxButtons">
+          <a href="#" class="linkButton"
+            ><button class="btn" type="button">Close</button></a
+          >
+          <button id="btnModalNumbers" class="btnModalNumbers">
+            Generar lista de números
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-  <script type="module" src="./dist/script/app.js"></script>
-</body>
-
+    <script type="module" src="./dist/script/app.js"></script>
+  </body>
 </html>

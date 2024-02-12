@@ -3,8 +3,10 @@ import { numbers } from "./numbers.js";
 const numberBox = document.getElementById("number");
 const form = document.forms[0];
 const btn = document.querySelectorAll("button");
-const modalText = document.getElementById("modalText");
-const fragment = document.createDocumentFragment();
+const inputTag = document.getElementById("inputAnswer");
+
+// const modalText = document.getElementById("modalText");
+// const fragment = document.createDocumentFragment();
 let counter = 0;
 let numberShowed = null;
 
@@ -39,6 +41,8 @@ function generateNumber() {
     removeColor();
   }
 
+  removePropertyTag();
+
   form.reset();
 }
 
@@ -68,4 +72,8 @@ function removeColor() {
       input.classList.remove("colorAlert");
     }
   }
+}
+
+function removePropertyTag() {
+  inputTag.removeAttribute("readonly");
 }
