@@ -13,6 +13,12 @@ document.addEventListener("keypress", (e) => {
   }
 
   if (e.key === "Enter") {
+    const inputAnswer = form[0].value;
+    if (!inputAnswer && numberBox.innerText) {
+      alert("Escriba un número");
+      return;
+    }
+
     if (counter === 1) {
       generateNumber();
       counter = 0;
