@@ -4,13 +4,14 @@ const numberBox = document.getElementById("number");
 const form = document.forms[0];
 const btn = document.querySelectorAll("button");
 const inputTag = document.getElementById("inputAnswer");
-
-// const modalText = document.getElementById("modalText");
-// const fragment = document.createDocumentFragment();
 let counter = 0;
 let numberShowed = null;
 
 document.addEventListener("keypress", (e) => {
+  if (checkIfIsNumber(e)) {
+    e.preventDefault();
+  }
+
   if (e.key === "Enter") {
     if (counter === 1) {
       generateNumber();
@@ -76,4 +77,8 @@ function removeColor() {
 
 function removePropertyTag() {
   inputTag.removeAttribute("readonly");
+}
+
+function checkIfIsNumber(e) {
+  return !isNaN(e.key);
 }
