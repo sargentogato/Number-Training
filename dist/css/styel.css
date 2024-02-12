@@ -62,12 +62,14 @@
 
 .modalText {
   width: 100%;
+  height: 100%;
   padding: 1rem;
   border-bottom: 1px solid var(--color-separation-line);
 }
 
 .modalBoxButtons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   width: 100%;
   gap: 0.5rem;
@@ -83,10 +85,24 @@
   font-size: 1rem;
   line-height: 1.5;
   padding: 5px 10px;
+  text-align: center;
 }
 
-.btn:hover {
-  background-color: #1967bb;
+.btnModal:hover {
+  background-color: #005dc0;
+}
+
+@media screen and (max-width: 600px) {
+  .btnModal {
+    flex-basis: 100%;
+  }
+}
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
 }
 
 @font-face {
@@ -211,4 +227,20 @@ h1,
 .colorAlert {
   background-color: #ff0000;
   color: white;
+}
+
+.numbersList {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  height: auto;
+  max-height: 70vh;
+}
+
+.numbersList > div {
+  flex: 1;
+  border: solid rgb(218, 218, 218);
+  padding: 5px 8px;
+  text-align: center;
+  margin-bottom: 5px;
 }/*# sourceMappingURL=styel.css.map */

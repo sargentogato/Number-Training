@@ -2,10 +2,12 @@ import { numbers } from "./numbers.js";
 
 const numberBox = document.getElementById("number");
 const form = document.forms[0];
-const btn = document.querySelectorAll("button");
+const btn = document.querySelectorAll("button, a");
 const inputTag = document.getElementById("inputAnswer");
+const modalText = document.getElementById("modalText");
 let counter = 0;
 let numberShowed = null;
+let messageModal = "";
 
 document.addEventListener("keypress", (e) => {
   if (checkIfIsNumber(e)) {
@@ -31,22 +33,29 @@ document.addEventListener("keypress", (e) => {
 
 for (const node of btn) {
   node.addEventListener("click", (e) => {
-    const eventTriggered = e.target.id;
+    const eventTriggered = e.target.id ? e.target.id : e.target.classList.value;
+
     if (eventTriggered === "btn") {
       generateNumber();
     } else if (eventTriggered === "btnModalNumbers") {
-      alert("Proceso en Construcción");
+      displayListOfNumbers();
+    } else if (
+      eventTriggered === "showInstructions" ||
+      eventTriggered === "close"
+    ) {
+      displayInstructions();
     }
   });
 }
 
 function generateNumber() {
-  const numberToshow = Math.floor(1 + Math.random() * 99);
-  numberBox.textContent = numberToshow;
-  numberShowed = numberToshow;
   if (form[0].value !== "") {
     removeColor();
   }
+
+  const numberToshow = Math.floor(1 + Math.random() * 99);
+  numberBox.textContent = numberToshow;
+  numberShowed = numberToshow;
 
   removePropertyTag();
 
@@ -87,4 +96,45 @@ function removePropertyTag() {
 
 function checkIfIsNumber(e) {
   return !isNaN(e.key);
+}
+
+function displayListOfNumbers() {
+  if (document.querySelector(".numbersList")) {
+    alert("La lista de números ya ha sido generada");
+    return;
+  }
+
+  messageModal = modalText.innerText;
+  modalText.innerHTML = "";
+
+  const div = document.createElement("div");
+  div.classList.add("numbersList");
+  const storageElement = document.createDocumentFragment();
+
+  Object.entries(numbers).forEach(([key, value]) => {
+    const box = document.createElement("div");
+
+    storageElement.appendChild(box);
+    box.textContent = `${key}:${value}`;
+  });
+
+  div.appendChild(storageElement);
+  modalText.appendChild(div);
+
+  showsHiddeButton(modalText);
+}
+
+function showsHiddeButton() {
+  const btn = document.getElementById("showInstructions");
+
+  btn.classList.toggle("shows");
+  btn.classList.toggle("hidden");
+}
+
+function displayInstructions() {
+  if (modalText.querySelectorAll(".numbersList").length) {
+    showsHiddeButton();
+    modalText.innerHTML = "";
+    modalText.innerHTML = messageModal;
+  }
 }

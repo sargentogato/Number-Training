@@ -51,12 +51,13 @@
         </div>
 
         <!-- Es muy importanet que cada elemento de cierre, tenga # así el target funcionará -->
-        <div class="modalBoxButtons">
-          <a href="#" class="linkButton"
-            ><button class="btnModal" type="button">Close</button></a
-          >
+        <div id="modalBoxButtons" class="modalBoxButtons">
+          <a href="#" id="close" class="btnModal">Close</a>
           <button id="btnModalNumbers" class="btnModal">
             Generar lista de números
+          </button>
+          <button id="showInstructions" class="btnModal hidden">
+            Instrucciones
           </button>
         </div>
       </div>
