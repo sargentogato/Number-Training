@@ -10,15 +10,12 @@ let numberShowed = null;
 let messageModal = "";
 
 document.addEventListener("keypress", (e) => {
-  if (!isNaN(e.target.value)) {
+  if (checkIfIsNumber(e)) {
     e.preventDefault();
     e.target.value = "";
+    alert("Sólo se admiten letras");
     return;
   }
-
-  // if (checkIfIsNumber(e)) {
-  //   e.preventDefault();
-  // }
 
   if (e.key === "Enter") {
     const inputAnswer = form[0].value;
@@ -71,11 +68,6 @@ function generateNumber() {
 function checkIntro() {
   const answerData = form[0].value.toLowerCase().trim();
 
-  if (!isNaN(answerData)) {
-    alert("Sólo se admiten letras");
-    counter = 0;
-    return;
-  }
   const answerDataType = typeof answerData;
   const compareData = numbers[numberShowed];
   if (answerData === compareData) {
