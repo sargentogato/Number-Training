@@ -65,6 +65,12 @@ function generateNumber() {
 function checkIntro() {
   const answerData = form[0].value.toLowerCase();
   const compareData = numbers[numberShowed];
+
+  if (typeof answerData !== String) {
+    alert("Sólo se admiten letras");
+    return;
+  }
+
   if (answerData === compareData) {
     form[1].value = compareData;
     addColor("colorSuccess");
