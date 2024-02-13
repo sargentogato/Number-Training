@@ -63,7 +63,7 @@ function generateNumber() {
 }
 
 function checkIntro() {
-  const answerData = form[0].value;
+  const answerData = form[0].value.toLowerCase();
   const compareData = numbers[numberShowed];
   if (answerData === compareData) {
     form[1].value = compareData;
