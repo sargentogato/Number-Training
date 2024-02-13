@@ -7,8 +7,8 @@
 }
 
 body {
-  height: 100vh;
   background-color: $bgMain;
+  height: 100vh;
 }
 
 h1 {
@@ -16,12 +16,12 @@ h1 {
 }
 
 .container {
-  height: 100%;
+  align-content: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
   gap: 0.5rem;
+  height: 100%;
+  justify-content: center;
 
   @media (min-width: 720px) {
     gap: 2rem;
@@ -41,17 +41,17 @@ h1 {
   text-align: center;
 
   @media (min-width: 720px) {
-    position: absolute;
     font-size: 2rem;
     left: 1rem;
+    position: absolute;
     top: 1rem;
   }
 }
 
 h1,
 .number {
-  text-align: center;
   font-family: consolas;
+  text-align: center;
 }
 
 .number {
@@ -59,16 +59,16 @@ h1,
 }
 
 .box__inputs {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
+  justify-content: center;
   padding: 0 2rem;
 
   input {
-    text-align: center;
     font-size: 50px;
+    text-align: center;
     width: 100%;
 
     @media (min-width: 720px) {
@@ -88,11 +88,11 @@ h1,
   justify-content: center;
 
   p {
+    color: white;
     flex-basis: 100%;
+    font-size: 1rem;
     padding: 0 2rem;
     text-align: center;
-    color: white;
-    font-size: 1rem;
   }
 
   @media (min-width: 720px) {
@@ -109,8 +109,8 @@ h1,
   color: white;
   font-size: 1rem;
   font-weight: bold;
-  padding: 0.5rem 1rem;
   outline: none;
+  padding: 0.5rem 1rem;
 
   @media (min-width: 720px) {
     &.btnEnter {
@@ -131,15 +131,15 @@ h1,
 .numbersList {
   display: flex;
   flex-wrap: wrap;
-  overflow-y: auto;
   height: auto;
   max-height: 70vh;
+  overflow-y: auto;
 }
 
 .numbersList > div {
-  flex: 1;
   border: solid rgb(218, 218, 218);
+  flex: 1;
+  margin-bottom: 5px;
   padding: 5px 8px;
   text-align: center;
-  margin-bottom: 5px;
 }
