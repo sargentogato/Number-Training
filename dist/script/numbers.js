@@ -83,7 +83,7 @@ const numbers = {
   82: "chino",
   83: "chemo",
   84: "chuco",
-  85: "chili",
+  85: "chela",
   86: "choza",
   87: "chafa",
   88: "chacha",

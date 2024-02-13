@@ -63,10 +63,12 @@ function generateNumber() {
 }
 
 function checkIntro() {
-  const answerData = form[0].value.toLowerCase();
+  const answerData = form[0].value.toLowerCase().trim();
+  const answerDataType = typeof answerData;
+  console.log(answerDataType);
   const compareData = numbers[numberShowed];
 
-  if (typeof answerData !== String) {
+  if (answerDataType !== "string") {
     alert("Sólo se admiten letras");
     return;
   }
