@@ -11,9 +11,9 @@ let messageModal = "";
 
 document.addEventListener("keypress", (e) => {
   if (checkIfIsNumber(e)) {
+    alert("Sólo se admiten letras");
     e.preventDefault();
     e.target.value = "";
-    alert("Sólo se admiten letras");
     return;
   }
 
@@ -100,7 +100,13 @@ function removePropertyTag() {
 }
 
 function checkIfIsNumber(e) {
-  return !isNaN(e.key);
+  const isMobile = /Mobi/.test(navigator.userAgent);
+
+  if (isMobile && !isNaN(e.target.value)) {
+    return true;
+  }
+
+  return false;
 }
 
 function displayListOfNumbers() {
