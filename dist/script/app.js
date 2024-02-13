@@ -64,15 +64,14 @@ function generateNumber() {
 
 function checkIntro() {
   const answerData = form[0].value.toLowerCase().trim();
-  const answerDataType = typeof answerData;
-  console.log(answerDataType);
-  const compareData = numbers[numberShowed];
 
-  if (answerDataType !== "string") {
+  if (!isNaN(answerData)) {
     alert("Sólo se admiten letras");
+    counter = 0;
     return;
   }
-
+  const answerDataType = typeof answerData;
+  const compareData = numbers[numberShowed];
   if (answerData === compareData) {
     form[1].value = compareData;
     addColor("colorSuccess");
