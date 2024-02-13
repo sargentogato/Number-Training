@@ -10,9 +10,15 @@ let numberShowed = null;
 let messageModal = "";
 
 document.addEventListener("keypress", (e) => {
-  if (checkIfIsNumber(e)) {
+  if (!isNaN(e.target.value)) {
     e.preventDefault();
+    e.target.value = "";
+    return;
   }
+
+  // if (checkIfIsNumber(e)) {
+  //   e.preventDefault();
+  // }
 
   if (e.key === "Enter") {
     const inputAnswer = form[0].value;
