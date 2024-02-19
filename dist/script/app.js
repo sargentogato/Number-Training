@@ -125,8 +125,8 @@ function displayListOfNumbers() {
   Object.entries(numbers).forEach(([key, value]) => {
     const box = document.createElement("div");
 
-    storageElement.appendChild(box);
     box.textContent = `${key}:${value}`;
+    storageElement.appendChild(box);
   });
 
   div.appendChild(storageElement);
