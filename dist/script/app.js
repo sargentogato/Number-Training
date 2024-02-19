@@ -102,7 +102,7 @@ function removePropertyTag() {
 function checkIfIsNumber(e) {
   const isMobile = /Mobi/.test(navigator.userAgent);
 
-  if (isMobile && !isNaN(e.target.value)) {
+  if (isMobile || !isNaN(e.target.value)) {
     return true;
   }
 
