@@ -11,6 +11,7 @@ let messageModal = "";
 
 document.addEventListener("keypress", (e) => {
   if (checkIfIsNumber(e)) {
+    console.log(checkIfIsNumber(e));
     alert("Sólo se admiten letras");
     e.preventDefault();
     e.target.value = "";
@@ -102,7 +103,7 @@ function removePropertyTag() {
 function checkIfIsNumber(e) {
   const isMobile = /Mobi/.test(navigator.userAgent);
 
-  if (isMobile || !isNaN(e.target.value)) {
+  if (isMobile || !isNaN(e.key)) {
     return true;
   }
 
